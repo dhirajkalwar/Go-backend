@@ -1,0 +1,32 @@
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go build command
+/main
+
+# Dependency directories
+vendor/
+Gopkg.lock
+Gopkg.toml
+
+# IDE or editor directories
+.vscode/
+.idea/
+*.iml
+
+# GoLand project files
+*.go.autocomplete
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
