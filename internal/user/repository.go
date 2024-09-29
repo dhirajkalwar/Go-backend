@@ -11,6 +11,18 @@ type UserRepository struct {
 }
 
 func (r *UserRepository) Create(user models.User) (models.User, error) {
-	result := r.DB.Create(&user)
-	return user, result.Error
+	err := r.DB.Create(&user).Error
+	return user, err
+}
+
+func (r *UserRepository) FindByEmail(email string) (models.User, error) {
+	var user models.User
+	err := r.DB.Where("email = ?", email).First(&user).Error
+	return user, err
+}
+
+func (r *UserRepository) GetByEmail(email string) (models.User, error) {
+	var user models.User
+	err := r.DB.Where("email = ?", email).First(&user).Error
+	return user, err
 }
